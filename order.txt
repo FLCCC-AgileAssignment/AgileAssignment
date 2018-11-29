@@ -1,0 +1,6 @@
+You have ordered : 
+
+Product : Lily
+Quantity : 1
+Product : Hibiscus
+Quantity : 1
