@@ -21,6 +21,13 @@ public class QuantityOrder extends javax.swing.JFrame {
     /**
      * Creates new form bcd
      */
+    
+    
+    private String msg1=null;
+    private String msg2=null;
+    private String msg3=null;
+    private String msg4=null;
+    private String msg5=null;
     public QuantityOrder() {
         initComponents();
         
@@ -41,7 +48,11 @@ public class QuantityOrder extends javax.swing.JFrame {
         initComponents();
         
          
-        
+        msg1 = para1;
+        msg2 = para2;
+        msg3 = para3;
+        msg4 = para4;
+        msg5 = para5;
         label1.setText(para1);
         
         label2.setText(para2);
@@ -224,45 +235,47 @@ public class QuantityOrder extends javax.swing.JFrame {
         String quantity5=jSpinner5.getValue().toString();
         
         
-        BufferedWriter writer = null;
-    try {
-        writer = new BufferedWriter(new FileWriter("./order.txt"));
-        writer.write("You have ordered : "+newline +newline); 
-        if(item1!=""){
-        writer.write("Product : " +item1 +newline);       
-        writer.write("Quantity : " +quantity1 +newline);  
-        }
-        if(item2!=""){
-        writer.write("Product : " +item2 +newline);       
-        writer.write("Quantity : " +quantity2 +newline);  
-        }
-        if(item3!=""){
-        writer.write("Product : " +item3 +newline);       
-        writer.write("Quantity : " +quantity3 +newline);  
-        }
-        if(item4!=""){
-        writer.write("Product : " +item4 +newline);       
-        writer.write("Quantity : " +quantity4 +newline);  
-        }
-        if(item5!=""){
-        writer.write("Product : " +item5 +newline);       
-        writer.write("Quantity : " +quantity5 +newline);  
-        }
-    } catch (IOException e) {
-        System.err.println(e);
-    } finally {
-        if (writer != null) {
-            try {
-                writer.close();
-            } catch (IOException e) {
-                System.err.println(e);
-            }
-        }
+//        BufferedWriter writer = null;
+//    try {
+//        writer = new BufferedWriter(new FileWriter("./order.txt", true));
+//        writer.write("You have ordered : "+newline); 
+//        if(item1!=""){
+//        writer.write("Product : " +item1 +newline);       
+//        writer.write("Quantity : " +quantity1 +newline);  
+//        }
+//        if(item2!=""){
+//        writer.write("Product : " +item2 +newline);       
+//        writer.write("Quantity : " +quantity2 +newline);  
+//        }
+//        if(item3!=""){
+//        writer.write("Product : " +item3 +newline);       
+//        writer.write("Quantity : " +quantity3 +newline);  
+//        }
+//        if(item4!=""){
+//        writer.write("Product : " +item4 +newline);       
+//        writer.write("Quantity : " +quantity4 +newline);  
+//        }
+//        if(item5!=""){
+//        writer.write("Product : " +item5 +newline);       
+//        writer.write("Quantity : " +quantity5 +newline);  
+//        }
+//    } catch (IOException e) {
+//        System.err.println(e);
+//    } finally {
+//        if (writer != null) {
+//            try {
+//                writer.close();
+//            } catch (IOException e) {
+//                System.err.println(e);
+//            }
+//        }
+//        
+//        
+//    }
+        //JOptionPane.showMessageDialog(rootPane, "You have successfully order!");
+        JFrame pickUp = new PickUpDate(msg1,msg2,msg3,msg4,msg5,quantity1,quantity2,quantity3,quantity4,quantity5);
+        pickUp.setVisible(true);
         
-        
-    }
-        JOptionPane.showMessageDialog(rootPane, "You have successfully order!");
-        System.exit(0);
         
     
        
