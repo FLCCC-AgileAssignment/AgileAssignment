@@ -6,6 +6,7 @@
 package AgileAssignment;
 
 import java.io.FileWriter;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,7 +37,7 @@ public class testing extends javax.swing.JFrame {
         Nametxt = new javax.swing.JTextField();
         Phonetxt = new javax.swing.JTextField();
         Addresstxt = new javax.swing.JTextField();
-        combo1 = new javax.swing.JComboBox<String>();
+        combo1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -60,7 +61,7 @@ public class testing extends javax.swing.JFrame {
             }
         });
 
-        combo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Consumer", "Corporate Customer" }));
+        combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Consumer", "Corporate Customer" }));
 
         jButton1.setText("Insert");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -139,12 +140,15 @@ public class testing extends javax.swing.JFrame {
         String ph = Phonetxt.getText().toString();
         String address = Addresstxt.getText().toString();
         String selected = combo1.getSelectedItem().toString();
+       
+               
         
+      
         try{
             
             FileWriter writer = new FileWriter("Customers.txt", true);
-            int id = 0 ;
-            id ++;
+           int id= 0 ;
+           id ++;
             writer.write("ID:" + id);
             writer.write(System.getProperty("line.separator"));
             writer.write("Name:" + name);
@@ -155,15 +159,19 @@ public class testing extends javax.swing.JFrame {
             writer.write(System.getProperty("line.separator"));
             writer.write("Type of Customer:" + selected);
             writer.write(System.getProperty("line.separator"));
+            
             if(selected == "Corporate Customer"){
                 writer.write("Credit Limit:3000");
+                writer.write(System.getProperty("line.separator"));
             }
+            
             writer.close();
             JOptionPane.showMessageDialog(rootPane, "Success");
             
-        }catch(Exception e){
+             }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, "Error");
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
