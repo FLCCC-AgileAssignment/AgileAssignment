@@ -5,7 +5,7 @@
  */
 package AgileAssignment;
 
-import com.itextpdf.text.BaseColor;
+/*import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -19,7 +19,7 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.DrawInterface;
-import com.itextpdf.text.pdf.draw.VerticalPositionMark;
+import com.itextpdf.text.pdf.draw.VerticalPositionMark;*/
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.Graphics2D;
